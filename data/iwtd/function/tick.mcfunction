@@ -8,3 +8,9 @@ execute unless score @r dfl_enable matches 1 as @a unless score @s dfl_need matc
 execute unless score @r dfl_enable matches 1 as @a unless score @s dfl_need matches 1 at @s run playsound entity.villager.no player @s
 execute unless score @r dfl_enable matches 1 as @a unless score @s dfl_need matches 1 run scoreboard players set @s dfl_need 1
 execute unless score @r dfl_enable matches 1 run return fail
+
+execute at @e[type=minecraft:snowball] as @a[distance=..1] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:slime_ball"}]}] run tag @s add dfl_slime
+execute at @e[type=minecraft:snowball] as @a[distance=..1] if entity @s[nbt={Inventory:[{Slot:-106b,id:"minecraft:slime_ball"}]}] run clear @s slime_ball 1
+execute at @a[tag=dfl_slime] run kill @e[type=minecraft:snowball,distance=..1]
+function dfl:lib/gametime
+function dfl:tick/slime
