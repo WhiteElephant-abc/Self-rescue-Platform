@@ -11,9 +11,10 @@ tellraw @a [{"type":"translatable","translate":"no.resource.pack.white.elephant.
 tellraw @a [{"type":"translatable","translate":"no.resource.pack.white.elephant.nothing","fallback":"| "},{"type":"translatable","translate":"no.resource.pack.white.elephant.nothing","fallback":"Modrinth","color":"blue","underlined":true,"italic":true,"clickEvent":{"action":"open_url","value":"https://modrinth.com/project/localization-resource-pack"},"click_event":{"action":"open_url","url":"https://modrinth.com/project/localization-resource-pack"}},{"type":"translatable","translate":"no.resource.pack.white.elephant.nothing","fallback":" | "},{"type":"translatable","translate":"no.resource.pack.white.elephant.nothing","fallback":"GitHub","color":"blue","underlined":true,"italic":true,"clickEvent":{"action":"open_url","value":"https://github.com/WhiteElephant-abc/Localization-Resource-Pack"},"click_event":{"action":"open_url","url":"https://github.com/WhiteElephant-abc/Localization-Resource-Pack"}}]
 tellraw @a [{"type":"translatable","translate":"no.resource.pack.white.elephant.nothing","fallback":"--------------------"}]
 
-#检测datapackets-functions-LIB数据包是否加载
 scoreboard objectives add dfl_enable dummy
 scoreboard players set @e dfl_enable 0
-#删除dfl_need记分板，确保每次加载数据包时都会重置状态
 scoreboard objectives remove dfl_need
 scoreboard objectives add dfl_need dummy
+
+data modify storage self_rescue_platform:temp_data Item set value {}
+
