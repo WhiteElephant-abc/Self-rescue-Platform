@@ -6,14 +6,9 @@ execute unless score @r dfl_enable matches 1 as @a unless score @s dfl_need matc
 execute unless score @r dfl_enable matches 1 as @a unless score @s dfl_need matches 1 run scoreboard players set @s dfl_need 1
 execute unless score @r dfl_enable matches 1 run return fail
 
-execute as @e[type=snowball] at @s run execute as @a[distance=..1] at @s run \
-    data modify storage self_rescue_platform:temp_data Item set from entity @s Inventory[{Slot:-106b}]
-execute as @e[type=snowball] at @s run execute as @a[distance=..1] at @s if data storage self_rescue_platform:temp_data Item{id:"minecraft:slime_ball"} run \
-    tag @s add dfl_slime
-execute as @e[type=snowball] at @s run execute as @a[distance=..1] at @s if data storage self_rescue_platform:temp_data Item{id:"minecraft:slime_ball"} run \
-    clear @s minecraft:slime_ball 1
- 
-execute at @a[tag=dfl_slime] run kill @e[type=minecraft:snowball,distance=..1]
+execute at @e[type=snowball] as @a[distance=..2] if items entity @s weapon.offhand slime_ball run tag @s add dfl_slime
+execute at @e[type=snowball] as @a[distance=..2] if items entity @s weapon.offhand slime_ball run clear @s slime_ball 1
+execute at @a[tag=dfl_slime] run kill @e[type=minecraft:snowball,distance=..2]
  
 function dfl:lib/gametime
 function dfl:tick/slime

@@ -1,10 +1,7 @@
-# 待办列表
+# [SP]自救平台（Self-rescue Platform）
 
-**如果有好的想法，您可以通过 Pull requests 更新此文件（亦可提交 issues）**
-<!-- 如果想提交 Pull requests 请遵循已有格式 -->
-- 【[CDFZ]重蹈覆辙（Re-play）】：通过盔甲架记录玩家轨迹，下一玩家通过tp重复上一玩家轨迹
-- 【[BRB]贿赂（bribe）】：给生物仍对应物品，则使其不与玩家敌对
-- 【[AUT]自闭症（autism）】：通过DFL包的fill_outline函数包围玩家，玩家不动时，不生成玻璃
-- 【[NPT]防爆（NO Primed TNT）】：在所有被激活的TNT处放置TNT，并杀死被激活的TNT
-- 【】：通过放置光源方块实现动态光源，使用盔甲架记录并移除临时的光源方块
-- 【[FW]人间地狱（Fire Water）】：主世界的水变岩浆，地狱的岩浆变水
+这个数据包为 Minecraft 带来了自救平台，当你从高空坠落时，只需在副手放上粘液球，然后扔出一个雪球，自救平台便会生成。自救平台是 3*3 粘液块，自救平台会在生成 10 秒后消失，自救平台附近的粘液块掉落物会被清除，所以不要想着白嫖粘液块。
+
+此数据包依赖于[DFL](https://github.com/WhiteElephant-abc/datapackets-functions-LIB)。
+
+如果遇到任何问题，[点击这里](https://github.com/WhiteElephant-abc/Self-rescue-Platform/issues/new/choose) 反馈。
